@@ -1,4 +1,7 @@
 RubyVault::Application.routes.draw do
+
+  root :to => "welcome#index", :as => :welcome
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
