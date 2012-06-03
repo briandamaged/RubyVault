@@ -1,0 +1,20 @@
+<%= form_tag create_session_path do %>
+
+  <% if flash[:message] %>
+  <%= flash[:message] %>
+  <% end %>
+
+  <div class="field" >
+    <%= label_tag :username %>
+    <%= text_field_tag :username %>
+  </div>
+  
+  
+  <div class="field" >
+    <%= label_tag :password %>
+    <%= password_field_tag :password %>
+  </div>
+
+  <%= submit_tag "Login" %>
+  
+<% end %>

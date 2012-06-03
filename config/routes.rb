@@ -1,5 +1,11 @@
 RubyVault::Application.routes.draw do
 
+  get "login" => "session#new", :as => :login
+  post "session/create", :as => :create_session
+  match "logout" => "session#destroy", :as => :logout
+
+  resources :users
+
   root :to => "welcome#index", :as => :welcome
 
   # The priority is based upon order of creation:

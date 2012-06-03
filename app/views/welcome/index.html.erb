@@ -1,2 +1,7 @@
 <h1>Welcome to the RubyVault.</h1>
 <p>You can rest assured that your dollars are safe with us!</p>
+<% if current_user %>
+<p>Hello <%= current_user.first_name %>.  (<%= link_to "Logout", logout_path %>)</p>
+<% else %>
+<p>Please <%= link_to "login", login_path %> to access your account.</p>
+<% end %>
