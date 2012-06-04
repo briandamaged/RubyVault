@@ -8,7 +8,33 @@
 </head>
 <body>
 
-<%= yield %>
+
+<header id="sitenav" >
+
+    <nav id="authentication" >
+      <ul>
+        <% if logged_in? %>
+          <li><%= link_to "Logout", logout_path %></li>
+        <% else %>
+          <li>Register</li>
+          <li><%= link_to "Login", login_path %></li>
+        <% end %>
+      </ul>
+    </nav>
+
+    <nav>
+      <ul>
+        <li><%= link_to "Welcome", welcome_path %></li>
+      </ul>
+    </nav>
+</header>
+
+
+
+<div id="content" >
+
+  <%= yield %>
+</div>
 
 </body>
 </html>
