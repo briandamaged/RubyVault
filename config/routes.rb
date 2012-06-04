@@ -1,5 +1,8 @@
 RubyVault::Application.routes.draw do
 
+  get "registration/new", :as => :register_account
+  get "registration/create"
+
   get "login" => "session#new", :as => :login
   post "session/create", :as => :create_session
   match "logout" => "session#destroy", :as => :logout

@@ -1,7 +1,9 @@
 <%= form_tag create_session_path do %>
 
   <% if flash[:message] %>
-  <%= flash[:message] %>
+  <p class="error" >
+    <%= flash[:message] %>
+  </p>
   <% end %>
 
   <div class="field" >

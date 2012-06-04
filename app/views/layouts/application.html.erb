@@ -16,7 +16,7 @@
         <% if logged_in? %>
           <li><%= link_to "Logout", logout_path %></li>
         <% else %>
-          <li>Register</li>
+          <li><%= link_to "Register", register_account_path %></li>
           <li><%= link_to "Login", login_path %></li>
         <% end %>
       </ul>
