@@ -6,3 +6,7 @@ Known Issues
 * Sensitive data is stored in plaintext cookies:
   * ssn
   * account number
+* User's is_admin field is vulnerable to mass assignment.
+  Plus, it's easily guessed.
+
+
