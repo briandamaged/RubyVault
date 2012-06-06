@@ -20,7 +20,18 @@ class EnrollmentController < ApplicationController
   
   
   def choose_credentials
-    # @desired_credentials = DesiredCredentials.new
+    @user = User.new
+  end
+  
+  def create_account
+    @user = User.new(params[:user])
+    
+    if @user.save
+      session[:user_id] = @user.id
+      redirect_to welcome_path
+    else
+      render :choose_credentials
+    end
   end
   
 end
