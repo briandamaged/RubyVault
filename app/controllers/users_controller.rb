@@ -1,5 +1,8 @@
 
 class UsersController < ApplicationController
+
+  before_filter :check_for_admin
+
   # GET /users
   # GET /users.json
   def index
@@ -80,5 +83,13 @@ class UsersController < ApplicationController
       format.html { redirect_to users_url }
       format.json { head :no_content }
     end
+  end
+  
+  
+  
+  private
+  
+  def check_for_admin
+    redirect_to welcome_path unless (current_user and current_user.is_admin?)
   end
 end

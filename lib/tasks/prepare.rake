@@ -7,6 +7,6 @@ task :prepare => :environment do
     :last_name => "Minh",
     :email     => "adam.minh@company.org",
     :ssn       => "2561234523",
-    #:is_admin  => true
+    :is_admin  => true
   )
 end

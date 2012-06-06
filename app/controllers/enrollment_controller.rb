@@ -1,5 +1,6 @@
 
 class EnrollmentController < ApplicationController
+
   def state_identity
     @identification = Identification.new
   end
