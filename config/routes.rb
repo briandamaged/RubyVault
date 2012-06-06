@@ -2,6 +2,8 @@ RubyVault::Application.routes.draw do
 
   get "enrollment/state_identity", :as => :begin_enrollment
   post "enrollment/verify_identity"
+  
+  get "enrollment/choose_credentials", :as => :choose_credentials
 
   get "login" => "session#new", :as => :login
   post "session/create", :as => :create_session

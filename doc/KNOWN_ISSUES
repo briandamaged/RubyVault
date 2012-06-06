@@ -3,3 +3,6 @@ Known Issues
 
 * Session fixation on Login
 * User password is stored in plaintext within the DB
+* Sensitive data is stored in plaintext cookies:
+  * ssn
+  * account number

@@ -8,10 +8,19 @@ class EnrollmentController < ApplicationController
     @identification = Identification.new(params[:identification])
     
     if @identification.valid?
-      redirect_to welcome_path
+      cookies[:ssn]            = @identification.ssn
+      cookies[:account_number] = @identification.account_number
+      
+      redirect_to choose_credentials_path
     else
       render :state_identity
     end
     
   end
+  
+  
+  def choose_credentials
+    # @desired_credentials = DesiredCredentials.new
+  end
+  
 end
