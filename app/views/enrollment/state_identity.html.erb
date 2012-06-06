@@ -1,0 +1,34 @@
+<h1>Enroll with RubyVault</h1>
+
+<%= form_for @identification, :url => {:action => :verify_identity} do |f| %>
+
+  <% if @identification.errors.any? %>
+    <div id="error_explanation">
+      <h2>Your identification could not be verified because of the following <%= pluralize(@identification.errors.count, "error") %>:</h2>
+
+      <ul>
+      <% @identification.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :ssn %>
+    <%= f.text_field :ssn %>
+  </div>
+
+  <div class="field">
+    <%= f.label :account_number %>
+    <%= f.text_field :account_number %>
+  </div>
+
+  <div class="field">
+    <%= f.label :pin %>
+    <%= f.text_field :pin %>
+  </div>
+
+  <%= f.submit "Submit" %>
+
+<% end %>
