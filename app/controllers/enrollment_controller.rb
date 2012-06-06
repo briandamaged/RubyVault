@@ -25,6 +25,7 @@ class EnrollmentController < ApplicationController
   
   def create_account
     @user = User.new(params[:user])
+    @user.ssn = cookies[:ssn]
     
     if @user.save
       session[:user_id] = @user.id

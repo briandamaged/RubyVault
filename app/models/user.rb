@@ -12,4 +12,7 @@ class User < ActiveRecord::Base
   validates :first_name, :presence => true
   validates :last_name,  :presence => true
   
+  validates :ssn, :presence => true,
+                  :format => {:with => /\d{3}-?\d{2}-?\d{4}/,
+                              :message => "must consist of 9 digits"}
 end
