@@ -28,6 +28,11 @@ class EnrollmentController < ApplicationController
     @user = User.new(params[:user])
     @user.ssn = cookies[:ssn]
     
+    @user.accounts << Account.new(
+      :account_number => cookies[:account_number],
+      :balance => rand(100..3000)
+    )
+    
     if @user.save
       session[:user_id] = @user.id
       redirect_to welcome_path

@@ -25,6 +25,9 @@
     <nav>
       <ul>
         <li><%= link_to "Welcome", welcome_path %></li>
+        <% if logged_in? %>
+          <li><%= link_to "Accounts", accounts_path %></li>
+        <% end %>
       </ul>
     </nav>
 </header>

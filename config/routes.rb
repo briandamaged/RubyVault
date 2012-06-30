@@ -1,5 +1,9 @@
 RubyVault::Application.routes.draw do
 
+  #get "accounts/index"
+
+  resources :accounts, :only => :index
+
   get "enrollment/state_identity", :as => :begin_enrollment
   post "enrollment/verify_identity"
   
