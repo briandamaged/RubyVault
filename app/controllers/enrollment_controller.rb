@@ -28,10 +28,15 @@ class EnrollmentController < ApplicationController
     @user = User.new(params[:user])
     @user.ssn = cookies[:ssn]
     
-    @user.accounts << Account.new(
-      :account_number => cookies[:account_number],
-      :balance => rand(100..3000)
-    )
+    # Associate the user w/ the account number they provided
+    @user.accounts << create_monetary_account(cookies[:account_number])
+    
+    
+    # We "pretend" that we discovered these additional accounts
+    # when we looked up the user's information.
+    rand(1..3).times do
+      @user.accounts << create_monetary_account(find_unused_account_number)
+    end
     
     if @user.save
       session[:user_id] = @user.id
@@ -39,6 +44,23 @@ class EnrollmentController < ApplicationController
     else
       render :choose_credentials
     end
+  end
+  
+  
+  private
+  
+  def find_unused_account_number
+    loop do
+      account_no = (1..16).map{ rand(0..9) }.join
+      return account_no unless Account.find_by_account_number(account_no)
+    end
+  end
+  
+  def create_monetary_account(account_number)
+    Account.new(
+      :account_number => account_number,
+      :balance => rand(100..3000)
+    )
   end
   
 end

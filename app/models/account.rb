@@ -1,6 +1,9 @@
 class Account < ActiveRecord::Base
   attr_accessible :account_number, :balance, :name
   
+  belongs_to :account_type
+  belongs_to :user
+  
   validates :name, :format => {:with => /((\w)((\w\s)*(\w))?)?/,
                                :message => 'must consist of letters, numbers, and spaces'}
   
@@ -10,6 +13,6 @@ class Account < ActiveRecord::Base
                              
   validates :balance, :presence => true
   
-  belongs_to :user
+  
   
 end
