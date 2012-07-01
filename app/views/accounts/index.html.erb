@@ -11,7 +11,7 @@
     <tr>
       <td><%= a.name %></td>
       <td><%= a.account_number %></td>
-      <td><%= a.balance %></td>
+      <td><%= number_to_currency(a.balance) %></td>
     </tr>
   <% end %>
 </table>
