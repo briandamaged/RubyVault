@@ -12,21 +12,21 @@ of known vulnerabilities can be found at /doc/KNOWN_ISSUES .
 We will assume that you have already copied RubyVault onto your machine,
 and you have navigated to its directory.
 
-* Run bundle to obtain RubyVault's dependencies:
+==== Run bundle to obtain RubyVault's dependencies:
 
   > bundle
 
-* Create a database configuration file.  For simplicity, we have provided
-a template file that will configure RubyVault to use a stand-alone SQLite3
-database:
+==== Create a database configuration file.
+
+For simplicity, we have provided a template file that will configure RubyVault to use a stand-alone SQLite3 database:
 
   > cp config/database.yml.template config/database.yml
 
-* Run the database migrations:
+==== Run the database migrations:
 
   > bundle exec rake db:migrate
 
-* Seed the database with the initial dataset:
+==== Seed the database with the initial dataset:
 
   > bundle exec rake prepare
 
