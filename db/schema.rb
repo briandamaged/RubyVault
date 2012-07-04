@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120630235604) do
+ActiveRecord::Schema.define(:version => 20120704042740) do
 
   create_table "account_types", :force => true do |t|
     t.string   "name"
@@ -21,11 +21,11 @@ ActiveRecord::Schema.define(:version => 20120630235604) do
 
   create_table "accounts", :force => true do |t|
     t.string   "account_number"
-    t.integer  "balance"
+    t.decimal  "balance",         :precision => 20, :scale => 2
     t.integer  "user_id"
     t.string   "name"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",                                     :null => false
+    t.datetime "updated_at",                                     :null => false
     t.integer  "account_type_id"
   end
 
