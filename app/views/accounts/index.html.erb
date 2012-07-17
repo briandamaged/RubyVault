@@ -1,19 +1,28 @@
 <h1>Accounts</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Account Number</th>
-    <th>Account Type</th>
-    <th>Balance</th>
-  </tr>
-  
-  <% @accounts.each do |a| %>
+<% if @accounts.empty? %>
+  <p>
+    Sorry, you have not created any monetary accounts with us.  Please visit
+    your local RubyVault branch office and give us your money.
+  </p>
+<% else %>
+
+  <table>
     <tr>
-      <td><%= a.name %></td>
-      <td><%= a.account_number %></td>
-      <td><%= a.account_type.name %></td>
-      <td><%= number_to_currency(a.balance) %></td>
+      <th>Name</th>
+      <th>Account Number</th>
+      <th>Account Type</th>
+      <th>Balance</th>
     </tr>
-  <% end %>
-</table>
+    
+    <% @accounts.each do |a| %>
+      <tr>
+        <td><%= a.name %></td>
+        <td><%= a.account_number %></td>
+        <td><%= a.account_type.name %></td>
+        <td><%= number_to_currency(a.balance) %></td>
+      </tr>
+    <% end %>
+  </table>
+
+<% end %>
