@@ -2,7 +2,7 @@
 namespace :rv do
   desc "Initializes RubyVault with a default dataset."
   task :prepare => :environment do
-    u = User.create(
+    admin = User.create(
       :username => "admin",
       :password => "I'mDaBoss",
       :first_name => "Adam",
@@ -11,6 +11,19 @@ namespace :rv do
       :ssn       => "2561234523",
       :is_admin  => true
     )
+    
+    personal_checking = AccountType.create(
+      :name => "Personal Checking"
+    )
+    
+    business_checking = AccountType.create(
+      :name => "Business Checking"
+    )
+    
+    personal_savings = AccountType.create(
+      :name => "Personal Savings"
+    )
+    
   end
 end
 

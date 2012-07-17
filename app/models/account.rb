@@ -1,5 +1,4 @@
 class Account < ActiveRecord::Base
-  attr_accessible :account_number, :balance, :name
   
   belongs_to :account_type
   belongs_to :user

@@ -4,6 +4,7 @@
   <tr>
     <th>Name</th>
     <th>Account Number</th>
+    <th>Account Type</th>
     <th>Balance</th>
   </tr>
   
@@ -11,6 +12,7 @@
     <tr>
       <td><%= a.name %></td>
       <td><%= a.account_number %></td>
+      <td><%= a.account_type.name %></td>
       <td><%= number_to_currency(a.balance) %></td>
     </tr>
   <% end %>

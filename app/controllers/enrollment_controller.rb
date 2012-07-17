@@ -59,6 +59,7 @@ class EnrollmentController < ApplicationController
   def create_monetary_account(account_number)
     Account.new(
       :account_number => account_number,
+      :account_type => AccountType.random,
       :balance => rand(100..3000)
     )
   end
