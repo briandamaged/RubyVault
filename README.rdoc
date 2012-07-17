@@ -28,7 +28,7 @@ For simplicity, we have provided a template file that will configure RubyVault t
 
 ==== Seed the database with the initial dataset:
 
-  > bundle exec rake prepare
+  > bundle exec rake rv:prepare
 
 
 === Launching the server
