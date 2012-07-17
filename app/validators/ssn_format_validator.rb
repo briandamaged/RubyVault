@@ -1,5 +1,5 @@
 
-class SsnValidator < ActiveModel::EachValidator
+class SsnFormatValidator < ActiveModel::EachValidator
 
   def validate_each(record, attribute, value)
     unless value =~ /^\d{3}-?\d{2}-?\d{4}$/

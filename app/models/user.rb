@@ -17,8 +17,8 @@ class User < ActiveRecord::Base
   validates :first_name, :presence => true
   validates :last_name,  :presence => true
   
-  validates :ssn, :presence => true,
-                  :ssn      => true
+  validates :ssn, :presence   => true,
+                  :ssn_format => true
 
 
   private

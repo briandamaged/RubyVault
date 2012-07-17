@@ -1,5 +1,5 @@
 
-class AccountNumberValidator < ActiveModel::EachValidator
+class AccountNumberFormatValidator < ActiveModel::EachValidator
 
   def validate_each(record, attribute, value)
     unless value =~ /^\d{16}$/
