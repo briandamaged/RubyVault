@@ -7,8 +7,7 @@ class Account < ActiveRecord::Base
                                :message => 'must consist of letters, numbers, and spaces'}
   
   validates :account_number, :presence => true,
-                             :format => {:with => /\d{16}/,
-                                         :message => 'must consist of 16 digits' }
+                             :account_number => true
                              
   validates :balance, :presence => true
   

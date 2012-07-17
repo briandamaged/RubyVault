@@ -7,12 +7,10 @@ class Identification
   attr_accessor :ssn, :account_number, :pin
 
   validates :ssn, :presence => true,
-                  :format => {:with => /\d{3}-?\d{2}-?\d{4}/,
-                              :message => "must consist of 9 digits" }
+                  :ssn => true
 
   validates :account_number, :presence => true,
-                             :format => {:with => /\d{16}/,
-                                         :message => "must consist of 16 digits"}
+                             :account_number => true
 
   validates :pin, :presence => true,
                   :format => {:with => /\d{4}/,
