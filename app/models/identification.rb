@@ -7,10 +7,12 @@ class Identification
   attr_accessor :ssn, :account_number, :pin
 
   validates :ssn, :presence => true,
-                  :ssn => true
+                  :ssn => true,
+                  :ssn_unused => true
 
   validates :account_number, :presence => true,
-                             :account_number => true
+                             :account_number => true,
+                             :account_number_unused => true
 
   validates :pin, :presence => true,
                   :format => {:with => /\d{4}/,
