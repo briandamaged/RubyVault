@@ -7,6 +7,11 @@ gem 'rails', '3.2.5'
 
 gem 'sqlite3'
 
+# Gem that makes it easier to retrieve random records
+# from the database
+
+gem 'randumb'
+
 
 # Gems used only for assets and not required
 # in production environments by default.

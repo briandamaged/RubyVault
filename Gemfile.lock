@@ -78,6 +78,10 @@ GEM
       rdoc (~> 3.4)
       thor (>= 0.14.6, < 2.0)
     rake (0.9.2.2)
+    randumb (0.3.0)
+      activerecord (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      rake
     rdoc (3.12)
       json (~> 1.4)
     sass (3.1.19)
@@ -109,6 +113,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   jquery-rails
   rails (= 3.2.5)
+  randumb
   sass-rails (~> 3.2.3)
   sqlite3
   therubyracer
