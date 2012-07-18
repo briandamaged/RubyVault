@@ -1,0 +1,26 @@
+<h1>Profile</h1>
+
+
+<table>
+  <tr>
+    <th>First Name:</th>
+    <td><%= @user.first_name %></td>
+  </tr>
+  <tr>
+    <th>Last Name:</th>
+    <td><%= @user.last_name %></td>
+  </tr>
+  <tr>
+    <th>Username:</th>
+    <td><%= @user.username %></td>
+  </tr>
+  <tr>
+    <th>E-mail:</th>
+    <td><%= @user.email %></td>
+  </tr>
+</table>
+
+<ul>
+  <li><%= link_to "Edit Profile", profile_path(:edit) %></li>
+  <li><%= link_to "Change Password", profile_path(:change_password) %></li>
+</ul>

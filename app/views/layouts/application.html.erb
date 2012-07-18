@@ -14,6 +14,7 @@
     <nav id="authentication" >
       <ul>
         <% if logged_in? %>
+          <li><%= link_to "Profile", profile_path(:view) %></li>
           <li><%= link_to "Logout", logout_path %></li>
         <% else %>
           <li><%= link_to "Enroll", begin_enrollment_path %></li>

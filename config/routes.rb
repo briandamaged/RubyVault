@@ -1,6 +1,6 @@
 RubyVault::Application.routes.draw do
 
-  #get "accounts/index"
+  match "profile/:action" => "profile#:action", :as => :profile
 
   resources :accounts, :only => :index
 
