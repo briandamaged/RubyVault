@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-  attr_accessible :username, :pasword, :email, :first_name, :last_name, :is_admin
+  attr_accessible :username, :password, :password_confirmation,
+                  :email, :first_name, :last_name, :is_admin
 
   has_many :accounts
   
