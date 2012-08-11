@@ -27,7 +27,7 @@ class ProfileController < ApplicationController
   
 
   def change_password
-    
+    @user = current_user
   end
   
   
