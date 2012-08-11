@@ -12,7 +12,7 @@ class ProfileController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:user][:id])
+    @user = current_user
     
     respond_to do |format|
       if @user.update_attributes(params[:user])
@@ -24,8 +24,10 @@ class ProfileController < ApplicationController
       end
     end
   end
+  
 
   def change_password
+    
   end
   
   

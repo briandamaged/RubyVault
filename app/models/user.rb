@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  attr_accessible :username, :pasword, :email, :first_name, :last_name, :is_admin
+
   has_many :accounts
   
   alias_attribute :is_admin?, :is_admin
