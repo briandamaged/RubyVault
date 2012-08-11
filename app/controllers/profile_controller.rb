@@ -27,9 +27,20 @@ class ProfileController < ApplicationController
   
 
   def change_password
-    @user = current_user
+    @change_password = ChangePassword.new
   end
   
+  
+  def do_change_password
+    @change_password = ChangePassword.new(params[:change_password])
+    
+    if @change_password.valid?
+      
+    else
+      render action: "change_password"
+    end
+    
+  end
   
   
   private
